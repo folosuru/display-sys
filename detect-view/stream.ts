@@ -10,8 +10,6 @@ import {send} from "./util/WebSocket.js";
     // @ts-ignore
     document.getElementById("created_edit_confirm").addEventListener('click',changeSendName);
 
-    let a : CreatedBox = new CreatedBox(0,0,100,100);
-
 
     let video : HTMLVideoElement;
     let canvas : HTMLCanvasElement;

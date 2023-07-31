@@ -32,8 +32,10 @@ export function onMouseMove(ev :MouseEvent){
     let ctx :CanvasRenderingContext2D|null  = canvas.getContext("2d");
     if (ctx == null) return;
     ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.shadowColor = '#eeeeee';
+    ctx.shadowBlur = 5;
     ctx.beginPath();
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 3;
     ctx.strokeRect(start_x,start_y,ev.x - start_x, ev.y -start_y)
 }
 export function onMouseUp(ev :MouseEvent){
