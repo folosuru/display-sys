@@ -38,5 +38,7 @@ export function onMouseMove(ev :MouseEvent){
 }
 export function onMouseUp(ev :MouseEvent){
     new CreatedBox(ev.x,ev.y,start_x,start_y);
+    let ctx :CanvasRenderingContext2D|null  = canvas.getContext("2d");
+    if (ctx != null){ctx.clearRect(0,0,canvas.width,canvas.height);}
     isPushing = false;
 }

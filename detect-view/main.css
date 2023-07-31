@@ -14,8 +14,10 @@
     left: 0;
 }
 #created_box_wrap > * {
-    background-color: #58c1fa;
+    background-color: gray;
     z-index: 3;
+    opacity: 0.2;
+    border: black solid 3px;
     position: absolute;
 }
 
