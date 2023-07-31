@@ -1,0 +1,32 @@
+#selecting_box_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+#created_box_wrap {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#created_box_wrap > * {
+    background-color: #58c1fa;
+    z-index: 3;
+    position: absolute;
+}
+
+#created_box_edit {
+    background: wheat;
+    padding: 1rem;
+    border: black 2px solid;
+    height: 100px;
+    z-index: 4;
+}
+#created_box_edit > .created_edit_window_button{
+    height: 20px;
+    width: 80px;
+}
