@@ -69,6 +69,7 @@ function removeOld() : void{
     const old_list = document.getElementsByClassName("disappear");
     while (old_list.length) {
         console.log(old_list.item(0))
+        // @ts-ignore
         old_list.item(0).remove()
     }
 }
