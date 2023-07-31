@@ -1,7 +1,7 @@
 import {CreatedBox} from "./util/CreatedBox.js";
 import {changeSendName, takeAll} from "./util/CreatedBoxManager.js";
 import {rectangeSelect_init} from "./util/RectangleSelect.js";
-import {send} from "./util/WebSocket";
+import {send} from "./util/WebSocket.js";
 
 
 (() => {
@@ -44,7 +44,7 @@ import {send} from "./util/WebSocket";
                     canvas.setAttribute("width", String(video.videoWidth ));
                     canvas.setAttribute("height", String(video.videoHeight));
                     streaming = true;
-                    setInterval(take,500);
+                    setInterval(take,1000);
 
                 }
             },

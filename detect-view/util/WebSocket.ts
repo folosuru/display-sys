@@ -1,4 +1,6 @@
+
+const ws :WebSocket = new WebSocket("ws://localhost:7851")
+
 export function send(obj : Map<string,boolean>){
-    //do something...
-    // TODO : 仕様制定する
+    ws.send(JSON.stringify(Object.fromEntries(obj)));
 }
