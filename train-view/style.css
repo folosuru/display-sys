@@ -1,0 +1,104 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.top_info {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.top_info > * {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.floor_info {
+    width: 17vw;
+    height: 21vw;
+    background-color: #58c1fa;
+    font-size: 7vw;
+}
+
+.project_name {
+    width: 38vw;
+    height: 21vw;
+    background-color: black;
+    font-size: 5vw;
+}
+
+.room_name {
+    width: 24vw;
+    height: 21vw;
+    background-color: black;
+    font-size: 7vw;
+}
+
+.accessory {
+    width: 15vw;
+    height: 21vw;
+    background-color: black;
+    font-size: 7vw;
+}
+
+.info_text_wrapper {
+    position: relative;
+}
+
+.floor_info_text {
+    font-weight: bolder;
+    font-family: sans-serif;
+    color: whitesmoke;
+}
+
+.info_text {
+    font-weight: bolder;
+    font-family: sans-serif;
+    color: whitesmoke;
+    position: absolute;
+}
+
+.appear {
+    transform-origin: top;
+    animation-name: appear;
+    animation-timing-function: linear;
+    animation-duration: 0.75s;
+}
+
+.disappear {
+    transform-origin: bottom;
+    animation-name: disappear;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+}
+
+
+@keyframes appear {
+    from {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotateX(0);
+        opacity: 100%;
+    }
+}
+
+@keyframes disappear {
+    from {
+        transform: rotateX(0);
+        opacity: 100%;
+    }
+
+    to {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+}
