@@ -27,8 +27,7 @@ export class CreatedBox{
     private last_lighterthan_result : boolean|null;
 
     showEditWindow(ev : MouseEvent){
-        // @ts-ignore
-        let edit_window: HTMLDivElement = document.getElementById("created_box_edit");
+        let edit_window: HTMLDialogElement = <HTMLDialogElement>document.getElementById("created_box_edit");
         edit_window.style.display = "block";
         edit_window.style.left = String(ev.pageX) + "px";
         edit_window.style.top = String(ev.pageY) + "px";
@@ -62,7 +61,7 @@ export class CreatedBox{
     }
 
     updateColor() : void {
-        const context = this.canvas.getContext("2d");
+        const context = this.canvas.getContext("2d",{willReadFrequently:true});
         if (context == null) {return}
         let img: ImageData = context.getImageData(this.x, this.y, this.width, this.height);
         this.now_color = this.getImageAverage(img);
@@ -103,6 +102,8 @@ export class CreatedBox{
             alert("読み取りに失敗したので、うん。ごめん");
         } else {
             this.light_smallest = color.getBiggest();
+            let label = <HTMLSpanElement>document.getElementById("created_box_threshold_smallest_label");
+            label.textContent = color.getHEXString();
         }
     }
     createThreshold_max() : void{
@@ -112,6 +113,8 @@ export class CreatedBox{
             alert("読み取りに失敗したので、うん。ごめん");
         } else {
             this.light_biggest = color.getBiggest();
+            let label = <HTMLSpanElement>document.getElementById("created_box_threshold_biggest_label");
+            label.textContent = color.getHEXString();
         }
     }
 
