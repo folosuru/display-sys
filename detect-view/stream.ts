@@ -1,4 +1,3 @@
-import {CreatedBox} from "./util/CreatedBox.js";
 import {changeSendName, changeThresholdMax, changeThresholdMin, takeAll} from "./util/CreatedBoxManager.js";
 import {rectangeSelect_init} from "./util/RectangleSelect.js";
 import {send} from "./util/WebSocket.js";
@@ -41,7 +40,7 @@ import {GeneralSetting_init} from "./GeneralSetting.js";
 
         video.addEventListener(
             "canplay",
-            (ev) => {
+            () => {
                 if (!streaming) {
                     canvas.setAttribute("width", String(video.videoWidth ));
                     canvas.setAttribute("height", String(video.videoHeight));
