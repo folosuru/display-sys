@@ -40,7 +40,7 @@ export class CreatedBox{
         element_name_input.value = this.uniq_id;
         (<HTMLInputElement>document.getElementById("send_name_input")).value = this.sendName;
         let threshold_biggest = this.light_biggest_color?.getHEXString();
-        let threshold_smallest = this.light_biggest_color?.getHEXString();
+        let threshold_smallest = this.light_smallest_color?.getHEXString();
         if (threshold_biggest !== undefined) {
             (<HTMLInputElement>document.getElementById("created_box_threshold_biggest")).value = threshold_biggest;
         }
@@ -90,6 +90,11 @@ export class CreatedBox{
         } else {
             return this.last_lighterthan_result;
         }
+    }
+
+    updateThreshold() :void {
+        this.light_threshold = (this.light_smallest + this.light_biggest) / 2;
+        // Chu! 雑実装でごめん
     }
 
     isLighterThanThreshold() :boolean{

@@ -7,9 +7,13 @@ export function send(obj : Map<string,boolean>){
         return;
     }
     if (ws.readyState !== 1) /* state is not OPEN*/ {
-        console.log("socket ")
+        console.log("socket is not ready")
         return;
     }
     ws.send(JSON.stringify(Object.fromEntries(obj)));
     console.log("send!")
+}
+
+export function changeWebSocketURL(IP :string, Port :string) {
+    ws = new WebSocket(`ws://${IP}:${Port}`);
 }
