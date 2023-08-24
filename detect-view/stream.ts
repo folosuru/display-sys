@@ -2,11 +2,13 @@ import {CreatedBox} from "./util/CreatedBox.js";
 import {changeSendName, changeThresholdMax, changeThresholdMin, takeAll} from "./util/CreatedBoxManager.js";
 import {rectangeSelect_init} from "./util/RectangleSelect.js";
 import {send} from "./util/WebSocket.js";
+import {GeneralSetting_init} from "./GeneralSetting.js";
 
 
 (() => {
     // @ts-ignore
     document.getElementById("created_box_edit").style.display = "none";
+    GeneralSetting_init();
     // @ts-ignore
     document.getElementById("created_edit_confirm").addEventListener('click',changeSendName);
     // @ts-ignore

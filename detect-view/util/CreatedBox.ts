@@ -18,6 +18,9 @@ export class CreatedBox{
 
     private light_threshold : number = 128;
 
+    private light_biggest_color : Color|undefined;
+    private light_smallest_color : Color|undefined;
+
     private light_biggest : number = 256;
     private light_smallest : number = 0;
 
@@ -35,10 +38,15 @@ export class CreatedBox{
         // @ts-ignore
         let element_name_input: HTMLInputElement = document.getElementById("element_name");
         element_name_input.value = this.uniq_id;
-    }
-
-    showSelectedBox() :void {
-        console.log(this.uniq_id);
+        (<HTMLInputElement>document.getElementById("send_name_input")).value = this.sendName;
+        let threshold_biggest = this.light_biggest_color?.getHEXString();
+        let threshold_smallest = this.light_biggest_color?.getHEXString();
+        if (threshold_biggest !== undefined) {
+            (<HTMLInputElement>document.getElementById("created_box_threshold_biggest")).value = threshold_biggest;
+        }
+        if (threshold_smallest !== undefined) {
+            (<HTMLInputElement>document.getElementById("created_box_threshold_smallest")).value = threshold_smallest;
+        }
     }
 
     createSelectedBox(id : String) :HTMLDivElement{
